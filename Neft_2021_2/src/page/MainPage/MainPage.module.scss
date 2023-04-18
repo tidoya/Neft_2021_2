@@ -4,3 +4,35 @@
   color: #ea3742;
   margin: 50px 0;
 }
+.button {
+  color: black;
+  text-align: center;
+  padding: 7px 42px;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  margin-right: 16px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    color: white;
+    background-color: #000000;
+  }
+}
+.active__button {
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  padding: 7px 42px;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  margin-right: 16px;
+  border: none;
+  background-color: #000000;
+}
+.barChart {
+  position: relative;
+  left: -50px;
+}

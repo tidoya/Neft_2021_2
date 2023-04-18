@@ -14,7 +14,7 @@ const initialState: ChartState = {
   description: { left: '', right: '' },
   PieChart: [],
   isLoading: false,
-  error: '',
+  error: null,
 };
 
 export const ChartSlice = createSlice({
@@ -28,7 +28,7 @@ export const ChartSlice = createSlice({
         description: { left: '', right: '' },
         PieChart: [],
         isLoading: false,
-        error: '',
+        error: null,
       };
     },
   },
