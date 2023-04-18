@@ -1,8 +1,6 @@
 {
-  "devDependencies": {
-    "@types/node": "^18.15.11"
-  },
   "dependencies": {
-    "scss": "^0.2.4"
+    "@reduxjs/toolkit": "^1.9.5",
+    "react-redux": "^8.0.5"
   }
 }
