@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ChartState } from '../../interfaces/reducers/ChartReducer.inteface';
+import { ChartState } from '../../interfaces/reducers/ChartReducer.interface';
 import {
   GetChart,
   GetChartDesc,

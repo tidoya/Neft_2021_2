@@ -1,0 +1,30 @@
+.block {
+  font-size: 18px;
+  line-height: 24px;
+  width: 260px;
+}
+.line {
+  margin: 10px 0;
+  width: 260px;
+  background-color: #707070;
+  border-bottom: 3px solid #707070;
+}
+.title__block {
+  width: 180px;
+}
+.desc__block {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.left__desc {
+  font-size: 30px;
+  font-weight: bold;
+}
+.right__desc__plus {
+  color: green;
+}
+.right__desc__minus {
+  color: #e9454f;
+  font-size: 18px;
+}

@@ -1,12 +1,6 @@
-export type barChart = {
-  year: number;
-  value: number;
-};
-export type pieChart = {
-  name: string;
-  value: number;
-  prev: number;
-};
+import { barChart } from '../BarChartGraph.interface';
+import { pieChart } from '../PieChartGraph.interface';
+
 export type desc = {
   left: string;
   right: string;

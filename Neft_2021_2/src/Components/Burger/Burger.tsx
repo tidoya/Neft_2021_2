@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styles from './Burger.module.scss';
-import { PropsBuger } from '../../interfaces/Burger.inteface';
+import { PropsBuger } from '../../interfaces/Burger.interface';
 
 const Burger: FC<PropsBuger> = ({ open, setOpen }) => {
   const first = useSpring({

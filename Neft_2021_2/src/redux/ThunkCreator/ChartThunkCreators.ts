@@ -25,7 +25,7 @@ export const ProdChart = createAsyncThunk('ChartSlice/ProdChart', async () => {
   return data;
 });
 export const ProdChartDesc = createAsyncThunk('ChartSlice/ProdChartDesc', async () => {
-  const description = await getProdChartDesc();
+  const { description } = await getProdChartDesc();
   return description;
 });
 export const ProdpieChart = createAsyncThunk('ChartSlice/ProdpieChart', async () => {
