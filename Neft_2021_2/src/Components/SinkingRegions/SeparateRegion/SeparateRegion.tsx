@@ -8,7 +8,7 @@ function check_last_zero(num: string): string {
   }
   return num;
 }
-const SeparateRegion: FC<pieChart> = ({ name, value, prev }) => {
+const SeparateRegion: FC<pieChart> = ({ name, yName, value, prev }) => {
   const left_num = check_last_zero(Math.floor(value * 100).toFixed(1));
   let right_num = check_last_zero(((1 - value / prev) * 100).toFixed(1));
   return (
@@ -19,7 +19,11 @@ const SeparateRegion: FC<pieChart> = ({ name, value, prev }) => {
 
       <div className={styles.line}> </div>
       <div className={styles.desc__block}>
-        <p className={styles.left__desc}>{left_num}</p>
+        <div>
+          <p className={styles.left__desc}>{left_num}</p>
+          <p className={styles.name}>{yName}</p>
+        </div>
+
         <p className={Number(right_num) > 0 ? styles.right__desc__plus : styles.right__desc__minus}>
           {Number(right_num) > 0 ? `+${right_num}%` : `${right_num}%`}
         </p>

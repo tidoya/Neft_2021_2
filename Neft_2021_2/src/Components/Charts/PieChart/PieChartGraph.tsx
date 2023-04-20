@@ -1,37 +1,48 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
-import { propsForPieChart } from '../../../interfaces/PieChartGraph.interface';
+import { pieChart, propsForPieChart } from '../../../interfaces/PieChartGraph.interface';
 import styles from './PieChartGraph.module.scss';
 import ButtonForPieChart from '../../Buttons/ButtonForPieChart';
 import Comment from '../../Comment/Comment';
 
 const PieChartGraph: FC<propsForPieChart> = ({ styleForPieChart, PieChart, name }) => {
   const [isActive, setActive] = useState<number>(0);
+  const procent_Structure = PieChart.map((item, index) => {
+    if (index === isActive) {
+      return {
+        ...item,
+        name: (((item.value - item.prev) / item.prev) * 100).toFixed(1) + '%',
+        selected: true,
+        label: {
+          fontSize: 45,
+          fontFamily: 'Montserrat',
+          show: true,
+        },
+      };
+    }
+    return {
+      ...item,
+      name: (((item.value - item.prev) / item.prev) * 100).toFixed(1) + '%',
+      selected: false,
+      select: {
+        disabled: true,
+      },
+    };
+  });
   const option = {
     color: ['#951B81', '#F3AE4D', '#EA3742'],
     series: [
       {
-        name: name,
+        name: 'Access From',
         type: 'pie',
+        animationType: 'scale',
         radius: ['40%', '50%'],
-        avoidLabelOverlap: false,
-        selectedMode: true,
-        selectedOffset: 0,
+        selectedMode: 'single',
         label: {
           show: false,
           position: 'center',
         },
-        emphasis: {
-          label: {
-            show: true,
-            fontSize: 10,
-            fontWeight: 'bold',
-          },
-        },
-        labelLine: {
-          show: false,
-        },
-        data: PieChart,
+        data: procent_Structure,
       },
     ],
   };
@@ -60,7 +71,7 @@ const PieChartGraph: FC<propsForPieChart> = ({ styleForPieChart, PieChart, name 
             option={option}
           />
         </div>
-        <Comment valueLastYear={'-23'} desc={'п.п.'} />
+        <Comment valueLastYear={procent_Structure[isActive]?.name.slice(0, -1)} desc={'п.п.'} />
       </div>
     </div>
   );

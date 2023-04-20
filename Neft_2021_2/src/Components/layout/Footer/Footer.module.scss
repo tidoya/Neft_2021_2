@@ -5,3 +5,27 @@
   height: 248px;
   background-color: #f3f3f3;
 }
+.wrapper {
+  display: flex;
+  text-align: start;
+  justify-content: start;
+  min-width: 1600px;
+  flex-direction: column;
+  > h3 {
+    font-size: 36px;
+  }
+  > p {
+    margin-top: 5px;
+    font-size: 15px;
+  }
+}
+.logo {
+  margin-top: 50px;
+  display: flex;
+}
+.line {
+  margin: 0 15px;
+  width: 2px;
+  height: 30px;
+  background-color: #707070;
+}
