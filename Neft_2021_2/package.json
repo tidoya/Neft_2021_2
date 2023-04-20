@@ -15,7 +15,9 @@
     "react-redux": "^8.0.5",
     "react-spring": "^9.7.1",
     "sass": "^1.62.0",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "echarts": "^5.4.2",
+    "echarts-for-react": "^3.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
